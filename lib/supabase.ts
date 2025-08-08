@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { createClient as createSupabaseClient } from '@supabase/supabase-js'
 import { createClientComponentClient } from '@supabase/auth-helpers-nextjs'
 
 // Keep your existing database types
@@ -68,4 +68,4 @@ export const validateShoposEmail = (email: string): boolean => {
 
 // Keep your existing supabase client for backward compatibility
 // This ensures all your existing code continues to work
-export const supabase = createClient(supabaseUrl, supabaseAnonKey)
+export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey)
