@@ -37,4 +37,4 @@ This application is configured for deployment on Vercel with Supabase as the bac
 
 ## Authentication
 
-Access is restricted to @shopos.ai email addresses only. 
+Access is restricted to @shopos.ai email addresses only. # Production Ready
