@@ -4,11 +4,11 @@ import { deleteImage } from '@/lib/storage'
 
 export async function PUT(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
     const body = await request.json()
-    const cardId = params.id
+    const { id: cardId } = await params
 
     // Build update data
     const updateData: any = {}
@@ -38,10 +38,10 @@ export async function PUT(
 
 export async function DELETE(
   request: NextRequest,
-  { params }: { params: { id: string } }
+  { params }: { params: Promise<{ id: string }> }
 ) {
   try {
-    const cardId = params.id
+    const { id: cardId } = await params
 
     // Get card data first to retrieve image paths
     // Note: We'll need to modify this if we want to delete images
